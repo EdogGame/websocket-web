@@ -1,0 +1,24 @@
+label {
+  display: block;
+  text-indent: 18px;
+}
+
+button {
+  width: 100px;
+}
+
+/* 控制codemirrot的代码编辑框出现浏览器默认滚动条 */
+.CodeMirror-vscrollbar {
+  overflow-y: hidden !important;
+}
+
+.v-fade-left-enter-active,
+.v-fade-left-leave-active,
+.v-fade-left-move {
+  transition: all 0.5s;
+}
+.v-fade-left-enter,
+.v-fade-left-leave-to {
+  opacity: 0;
+  transform: translateX(-500px) scale(0.2);
+}
