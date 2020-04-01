@@ -30,3 +30,17 @@ jobs:
           git commit -m "CI: build"
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u origin gh-pages
+      - name: Set environment variables
+        run: |
+          echo "::set-env name=TAG_NAME::$(date +%Y%m%d)"
+          echo "::set-env name=RELEASE_NAME::$(date +%Y%m%d)"
+        shell: bash
+      - name: Create a release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          draft: false
+          prerelease: false
