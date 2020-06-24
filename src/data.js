@@ -1,4 +1,4 @@
-const serverAddr = 'wss://server.websocket-online-test.flxxyz.com:8443'
+const serverAddr = 'wss://ws-wot.flxxyz.com'
 
 const messageOptions = [
     {
